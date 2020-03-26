@@ -6,7 +6,6 @@ import painter
 resolution = 10  #Resolution of the map, millimeter / pixel
 margin = 10  #pixel
 file_path = "tirobo_2019_map.csv"
-file_path = "tirobo_sato_map.csv"
 generated_file_path = "./"
 image_name = "tirobo_map.pgm"
 yaml_file_name = "tirobo_map.yaml"
