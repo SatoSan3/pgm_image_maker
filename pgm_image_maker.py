@@ -1,8 +1,8 @@
 import pandas as pd
 import numpy as np
-
 import painter
-
+import argparse
+    
 resolution = 10  #Resolution of the map, millimeter / pixel
 margin = 10  #pixel
 file_path = "tirobo_2019_map.csv"
@@ -11,6 +11,17 @@ image_name = "tirobo_map.pgm"
 yaml_file_name = "tirobo_map.yaml"
 wall_parameter = 1
 name_list = ["x1","y1","x2","y2"]
+
+parser = argparse.ArgumentParser()
+parser.add_argument("--input", help="input csv file name")
+parser.add_argument("--output", help="output file name without extension")
+args = parser.parse_args()
+if args.input:
+    file_path = args.input
+if args.output:
+    image_name = args.output + ".pgm"
+    yaml_file_name = args.output + ".yaml"
+    
 
 df = pd.read_csv(file_path, names=name_list)
 
